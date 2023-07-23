@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user_service_route
+          uri: http://user-service-app:8080
+          predicates:
+            - Path=/users/**
+        - id: product_service_route
+          uri: http://product-service-app:8080
+          predicates:
+            - Path=/products/**
+        - id: order_service_route
+          uri: http://order-service-app:8080
+          predicates:
+            - Path=/orders/**
+
